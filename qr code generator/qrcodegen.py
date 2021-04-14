@@ -1,4 +1,9 @@
 import qrcode
+import qrcode.image.svg
+
+factory = qrcode.image.svg.SvgPathImage
+svg_image = qrcode.make("Hello people!", image_factory=factory)
+svg_image.save("myqr.svg")
 
 qr = qrcode.QRCode(version=1, error_correction=qrcode.constants.ERROR_CORRECT_L,
                    box_size=20,
